@@ -1,0 +1,33 @@
+:root {
+  /* ===== Colors ===== */
+  --color-primary: #4f46e5;       /* رئيسي */
+  --color-secondary: #16a34a;     /* ثانوي */
+  --color-accent: #f59e0b;        /* لون مميز */
+  --color-bg: #f9fafb;            /* خلفية عامة */
+  --color-surface: #ffffff;       /* بطاقات وأقسام */
+  --color-border: #e5e7eb;
+  --color-text: #111827;
+  --color-text-muted: #6b7280;
+
+  /* ===== Fonts ===== */
+  --font-main: "Poppins", sans-serif;
+  --font-arabic: "Cairo", sans-serif;
+
+  /* ===== Spacing ===== */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+
+  /* ===== Radius & Shadows ===== */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+  --shadow-lg: 0 10px 15px rgba(0,0,0,0.15);
+
+  /* ===== Transitions ===== */
+  --transition: 0.2s ease-in-out;
+}
