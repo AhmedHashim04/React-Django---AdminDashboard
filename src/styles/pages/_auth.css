@@ -1,1 +1,211 @@
 /* Auth Page */
+
+.signup-page{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    font-family: var(--font-sans);
+    background-color: var(--color-primary);
+    overflow: hidden;
+    
+}
+
+
+.signup-container{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    max-width: 50%;
+    height: 100vh;
+}
+.signup-image{
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    align-items: right;
+    padding: var(--space-lg);
+}
+.signup-image img{
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+}
+
+.signup-info{
+    color: #fff;
+    text-align: center;
+    margin-bottom: var(--space-xl);
+    margin-left: var(--space-xl);
+    margin-right: var(--space-xl);
+    margin-top: var(--space-xxl);
+}
+.signup-info h1{
+    font-size: 2.5rem;
+    margin-bottom: var(--space-md);
+}
+.signup-info p{
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+.signup-form{
+    background-color: var(--color-surface);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    width: 100%;
+    min-width: 600px;
+    font-family: var(--font-arabic);
+}
+
+.signup-header{
+    text-align: center;
+    margin-bottom: var(--space-lg);
+    
+    color: var(--color-surface);
+}
+
+.signup-form label{
+    display: block;
+    margin-bottom: var(--space-sm);
+    color: var(--color-text-muted);
+}
+.signup-form input{
+    width: 100%;
+    padding: var(--space-sm);
+    margin-bottom: var(--space-md);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+}
+.signup-submit-btn{
+    width: 100%;
+    padding: var(--space-md);
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color var(--transition), box-shadow var(--transition), transform 120ms ease;
+    box-shadow: var(--shadow-sm);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    min-height: 44px; /* accessible target */
+}
+
+/* more specific hover so it only targets the submit button */
+.signup-form .signup-submit-btn:hover{
+    background-color: var(--color-secondary);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
+/* focus states for keyboard users */
+.signup-submit-btn:focus-visible,
+.signup-social > button:focus-visible{
+    outline: 3px solid color-mix(in srgb, var(--color-primary) 30%, white 70%);
+    outline-offset: 3px;
+}
+
+/* disabled state */
+.signup-submit-btn:disabled{
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Social section */
+.signup-social{
+    display: flex;
+    gap: var(--space-sm);
+    margin-top: var(--space-md);
+    color: var(--color-text-muted);
+    background-color: var(--color-surface);
+    padding: var(--space-sm);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* make both buttons share the row equally */
+.signup-social > button{
+    flex: 1 1 0;
+    min-width: 0; /* prevent overflow with long content */
+    padding: var(--space-md);
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color var(--transition), box-shadow var(--transition), transform 120ms ease;
+    margin-top: 0; /* remove vertical spacing so they sit on the same line */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    min-height: 44px;
+    color: #fff;
+}
+
+/* slight lift on hover/active for social buttons */
+.signup-social > button:hover{
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+.signup-social > button:active{
+    transform: translateY(0);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Google */
+.signup-google-btn{
+    background-color: #db4437;
+    color: #fff;
+}
+.signup-google-btn:hover{
+    background-color: #c33d2e;
+}
+.signup-google-btn:focus-visible{
+    outline-color: color-mix(in srgb, #db4437 40%, white 60%);
+}
+
+/* Facebook */
+.signup-facebook-btn{
+    background-color: #3b5998;
+    color: #fff;
+}
+.signup-facebook-btn:hover{
+    background-color: #2d4373;
+}
+.signup-facebook-btn:focus-visible{
+    outline-color: color-mix(in srgb, #3b5998 40%, white 60%);
+}
+
+/* Responsive: stack social buttons on small screens */
+@media (max-width: 700px){
+    .signup-form{
+        min-width: unset;
+        padding: calc(var(--space-lg) / 1.5);
+    }
+    .signup-social{
+        flex-direction: column;
+        gap: var(--space-sm);
+    }
+    .signup-social > button{
+        width: 100%;
+    }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce){
+    .signup-submit-btn,
+    .signup-social > button{
+        transition: none;
+    }
+}
